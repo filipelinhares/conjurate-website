@@ -1,0 +1,31 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Setup
+title:               Jekyll Marlene
+tagline:             Starter template to Jekyll
+url:                 https://github.com/filipelinhares/jekyll-marlene
+baseurl:             ""
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Filipe Linhares
+  url:               https://twitter.com/ofilipelinhares
+  email:             filipelinhares@outlook.com
+
+# Custom vars
+version:             1.0.0
+github:
+  repo:             https://github.com/filipelinhares/jekyll-marlene
+
+# Gems
+highlighter: rouge
