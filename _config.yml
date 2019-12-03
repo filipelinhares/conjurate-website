@@ -8,7 +8,8 @@ title:               Jekyll Marlene
 tagline:             Starter template to Jekyll
 url:                 https://github.com/filipelinhares/jekyll-marlene
 baseurl:             ""
-
+outdated: false
+video_outdated: true
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.

@@ -1,0 +1,36 @@
+---
+layout: default
+title:  "Welcome to Jekyll!"
+date:   2015-10-24 23:42:16
+categories: jekyll update
+---
+
+{% if site.outdated %}
+  <aside class="ta-c pY-2 bgc-yellow c-white">
+    [WIP] Documentation is outdated with version 0.4.0.
+  </aside>
+{% endif %}
+<div class="d-f fxw-w">
+  <div class="w-20 pos-st t-0 as-fs hide-xs">
+    <ul class="lis-n w-100 pT-3 h-100 mR-3 bdR bdwR-2 bdc-gray m-0">
+      <li>
+        <a href="/docs/#10-instalation">1.0 Installation</a>
+      </li>
+      <li>
+        <a href="/docs/#20-get-started">2.0 Get started</a>
+      </li>
+      <li>
+        <a href="/docs/#30-cli">3.0 CLI</a>
+      </li>
+      <li>
+        <a href="/docs/#40-config">4.0 Config</a>
+      </li>
+      <li>
+        <a href="/docs/#50-templates">5.0 Templates</a>
+      </li>
+    </ul>
+      </div>
+      <div class="w-70 w-90-sm mX-a pB-100">
+        {{content}}
+  </div>
+</div>

@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Easy scaffolding tool">
 
-  
+  {% if page.title %}
+    <title>Conjurate - {{ page.title }}</title>
+  {% else %}
     <title>Conjurate</title>
-  
+  {% endif %}
 
   <link rel="shortcut icon" href="/favicon.png">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -229,36 +231,10 @@
   </style>
 </head>
 <body>
-  <header class="ta-c bd">
-    <div class="w-90 mX-a d-f ai-c jc-c pY-1">
-      <div class="mR-a fz-2 d-f ai-c">
-        <a href="/" class="c-green-light">Conjurate</a>
-      </div>
-      <nav>
-         <a href="/docs">Docs</a>
-         · <a href="/video">Video example</a>
-         · <a href="/changelog">Changelog</a>
-         · <a href="https://github.com/filipelinhares/conjurate">Github</a>
-         · <a class="d-f ai-c" href="https://npmjs.org/conjurate">
-          <img src="https://img.shields.io/npm/v/conjurate.svg?style=flat&color=gray&update=1" />
-        </a>
-      </nav>
-    </div>
-  </header>
-
+  {% include _header.html %}
   <main class="">
-    <div class="landing-main d-f fxd-c jc-c ai-c pY-80 ta-c">
-  <img class="mR-2 mT-1" alt="Conjurate Logo" src="https://i.imgur.com/2amDxYd.png" data-src="https://i.imgur.com/2amDxYd.png" onerror="this.style.display = 'none';">
-  <p style="font-size: 2rem;" class="mT-3 mB-4">Easy scaffolding tool</p>
-  <a href="/docs" class="btn-landing c-green bd bdc-green p-2 bdrs-3 pX-3">
-    Get Started
-  </a>
-</div>
-
+    {{ content }}
   </main>
-  <footer class="pY-3 ta-c bdT bdc-gray">
-    2019 - Open an issue <a class="c-green td-u" href="https://github.com/filipelinhares/conjurate-site/issues">here</a> to improve this doc
-</footer>
-
+  {% include _footer.html %}
 </body>
 </html>

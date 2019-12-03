@@ -1,0 +1,562 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Easy scaffolding tool">
+
+  
+    <title>Conjurate - Docs</title>
+  
+
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/funkcss/dist/funkcss.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/typcss/dist/typ.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/fooltips/dist/fooltips.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+
+
+  <style>
+    .highlight .err {
+      background: transparent;
+    }
+
+    :target {
+      position: relative;
+    }
+
+    :target:before {
+      content: '🔗';
+      position: absolute;
+      display: block;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 100%;
+    }
+
+    [type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .task-list-item {
+      list-style: none;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    table {
+      border: 1px solid #c6cbd1;
+      border-radius: 4px;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th {
+      padding: .5em;
+      background: #f2f2f2;
+      border: 1px solid #c6cbd1;
+    }
+
+    td {
+      border: 1px solid #c6cbd1;
+      padding: 6px;
+    }
+
+    tr {
+      border-top: 1px solid #c6cbd1;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 18px;
+      color: #313131;
+    }
+
+    span {
+      font-family: 'Roboto Mono', monospace;
+      margin-bottom: .5em;
+      line-height: 1.8;
+    }
+
+    code {
+      font-family: 'Roboto Mono';
+    }
+
+    header {
+      position: relative;
+      z-index: 2000;
+      background: #FFF;
+      font-size: 20px;
+      /*background-color: #81D37F;*/
+      border-bottom: 2px solid #f3f3f3 !important;
+    }
+
+    strong {
+      font-weight: 700;
+      border-bottom: 1px dotted;
+    }
+
+    h2 {
+      margin-top: 60px;
+    }
+
+    .bdc-green {
+      border-color: #81D37F;
+    }
+
+    .home a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #81D37F;
+    }
+
+    .home a:hover {
+      color: #81D37F;
+      background: #FFF;
+      text-decoration: none;
+    }
+
+    ul a {
+      display: block;
+      border-top: 0px solid red;
+      color: #323232;
+      font-size: 20px;
+    }
+
+    a {
+     color: #313131;
+     text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      display: grid;
+      grid-auto-flow: column;
+      gap: .5rem;
+      align-items: center;
+    }
+
+    li a {
+      padding-top: .5em;
+      padding-bottom: .5em;
+      border-bottom: 1px solid #f2f2f2;
+      color: #313131;
+      text-align: left;
+      padding-left: 1em;
+    }
+
+    li a:hover {
+      text-decoration: none;
+    }
+
+    .tooltip--red {
+      --tooltip-background-color: red;
+    }
+
+    .tooltip--big {
+      --tooltip-background-color: #222;
+      --tooltip-padding: 8px 12px;
+      --tooltip-font-size: 1rem;
+    }
+
+    .cur-h {
+      cursor: help;
+    }
+
+    .c-white {
+      color: #FFF;
+    }
+
+    .c-green {
+      color: #689064;
+    }
+
+    .c-green-light {
+      color: #81D37F;
+    }
+
+    .c-red {
+      color: #b96a57;
+    }
+
+    .c-gray {
+      color: #f3f3f3;
+    }
+
+    .bgc-yellow {
+      background-color: #e29c45;
+    }
+
+    .bdc-gray {
+      border-color: #f3f3f3;
+    }
+
+    .fz-2 {
+      font-size: 2rem;
+    }
+
+    .btn-landing:focus,
+    .btn-landing:hover {
+      color: #fff;
+      text-decoration: none;
+      background-color: #81D37F;
+    }
+
+    pre {
+      background: #f3f3f3;
+      padding: 1em;
+      border-radius: 4px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .hide-xs {
+        display: none;
+      }
+
+      .w-90-sm {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="ta-c bd">
+    <div class="w-90 mX-a d-f ai-c jc-c pY-1">
+      <div class="mR-a fz-2 d-f ai-c">
+        <a href="/" class="c-green-light">Conjurate</a>
+      </div>
+      <nav>
+         <a href="/docs">Docs</a>
+         · <a href="/video">Video example</a>
+         · <a href="/changelog">Changelog</a>
+         · <a href="https://github.com/filipelinhares/conjurate">Github</a>
+         · <a class="d-f ai-c" href="https://npmjs.org/conjurate">
+          <img src="https://img.shields.io/npm/v/conjurate.svg?style=flat&color=gray&update=1" />
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="">
+    
+<div class="d-f fxw-w">
+  <div class="w-20 pos-st t-0 as-fs hide-xs">
+    <ul class="lis-n w-100 pT-3 h-100 mR-3 bdR bdwR-2 bdc-gray m-0">
+      <li>
+        <a href="/docs/#10-instalation">1.0 Installation</a>
+      </li>
+      <li>
+        <a href="/docs/#20-get-started">2.0 Get started</a>
+      </li>
+      <li>
+        <a href="/docs/#30-cli">3.0 CLI</a>
+      </li>
+      <li>
+        <a href="/docs/#40-config">4.0 Config</a>
+      </li>
+      <li>
+        <a href="/docs/#50-templates">5.0 Templates</a>
+      </li>
+    </ul>
+      </div>
+      <div class="w-70 w-90-sm mX-a pB-100">
+        <h2 id="10-instalation">1.0 Instalation</h2>
+
+<h3 id="11-global">1.1 Global</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> conjurate
+</code></pre></div></div>
+
+<h3 id="12-local">1.2 Local</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> conjurate
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">package.json</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"gen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conjurate"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="13-npx">1.3 npx</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx conjurate
+</code></pre></div></div>
+
+<h2 id="20-get-started">2.0 Get started</h2>
+
+<p>Let’s start with an component library example</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">├──</span> components
+<span class="err">└──</span> package.json
+</code></pre></div></div>
+
+<h4 id="21-run-conjurate-initial-command-to-generate-a-config-file-or-add-the-config-to-packagejson">2.1 Run conjurate initial command to generate a config file or add the config to package.json</h4>
+
+<p><span>
+  ℹ️ Note: If you are using npm scripts, you need to run <strong><code class="highlighter-rouge">npm run gen -- --init</code></strong> to pass arguments to conjurate.
+</span></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conjurate <span class="nt">--init</span>
+</code></pre></div></div>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">├──</span> components
+<span class="gi">+├── .conjurate.json
+</span><span class="err">└──</span> package.json
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">.conjurate.json</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"templatesRoot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./conjurate"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"templates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"&lt;template-name&gt;"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./&lt;default-destination-dir&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"&lt;example-component&gt;"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;example-./src/components&gt;"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="22-change-templates-name-and-default-destination-folder">2.2 Change templates name and default destination folder</h4>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">{</span>
+  "templatesRoot": "./conjurate",
+  "templates": {
+<span class="gd">-    "template-name": "./template-destination-dir"
+-    "&lt;example-component&gt;": "&lt;example-./src/components&gt;"
+</span><span class="gi">+    "component": "./components"
+</span>  }
+<span class="err">}</span>
+</code></pre></div></div>
+
+<h4 id="23-create-templatesroot-folter-in-conjurate-and-the-component-template-inside-of-it-using-the-50-templates-placeholder">2.3 Create templatesRoot folter in <code class="highlighter-rouge">./conjurate</code> and the <code class="highlighter-rouge">component</code> template inside of it using the <a href="#50-templates">5.0 template’s</a> placeholder</h4>
+
+<p>The name “<code class="highlighter-rouge">component</code>” must be the same used in the config file in <a href="#22-change-templates-name-and-default-destination-folder">2.2</a></p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gi">+├── conjurate
++│   └── component
++│       ├── %kebab-case%.js
++│       └── %kebab-case%.css
+</span><span class="err">├──</span> components
+<span class="err">├──</span> .conjurate.json
+<span class="err">└──</span> package.json
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="o">/</span><span class="nx">conjurate</span><span class="o">/</span><span class="nx">component</span><span class="o">/%</span><span class="nx">kebab</span><span class="o">%</span><span class="p">.</span><span class="nx">js</span>
+
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">%</span><span class="nx">camel</span><span class="o">-</span><span class="k">case</span><span class="o">%</span><span class="nx">Style</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./%kebab-case%.css</span><span class="dl">'</span> 
+</code></pre></div></div>
+
+<h4 id="24-run-conjurate-passing-the-template-name-and-the-placeholder-content">2.4 Run conjurate passing the <code class="highlighter-rouge">template-name</code> and the <code class="highlighter-rouge">placeholder-content</code></h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conjurate component paper-input
+
+✔  success   created ./components/paper-input
+</code></pre></div></div>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">├──</span> conjurate
+<span class="err">│</span>   └── components
+<span class="err">│</span>       ├── %kebab-case%.js
+<span class="err">│</span>       └── %kebab-case%.css
+<span class="err">├──</span> components
+<span class="err">│</span>   └── input
+<span class="gi">+│       ├── paper-input.scss
++│       └── paper-input.js
+</span><span class="err">├──</span> package-lock.json
+<span class="err">└──</span> package.json
+</code></pre></div></div>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gi">+./conjurate/input/index.js
++
++import React from 'react';
++import paperInputStyle from './paper-input.css' 
+</span></code></pre></div></div>
+
+<h2 id="30-cli">3.0 CLI</h2>
+
+<h3 id="311-generate-command">3.1.1 Generate command:</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conjurate &lt;template-name&gt; &lt;placeholder-content&gt; <span class="o">[</span><span class="nt">--out</span> ./output]
+</code></pre></div></div>
+
+<h4 id="312-template-name">3.1.2 Template name</h4>
+<p><code class="highlighter-rouge">&lt;template-name&gt;</code></p>
+
+<p>The template name configured in <a href="#23-create-templatesroot-folter-in-conjurate-and-the-component-template-inside-of-it-using-the-50-templates-placeholder">2.3</a>.</p>
+
+<h4 id="313-placeholders">3.1.3 Placeholders</h4>
+<p><code class="highlighter-rouge">&lt;placeholder-content&gt;</code></p>
+
+<p>It will be the generated folder name inside destination folder configured in <a href="#23-create-templatesroot-folter-in-conjurate-and-the-component-template-inside-of-it-using-the-50-templates-placeholder">2.3</a>.</p>
+
+<h3 id="32-change-output-dir">3.2 Change output dir</h3>
+<ul>
+  <li><code class="highlighter-rouge">--output</code></li>
+  <li>alias <code class="highlighter-rouge">-o</code></li>
+</ul>
+
+<p>Overwrite default-destination-dir in config file for used template.</p>
+
+<h3 id="33-list-your-templates-configured-in-conjurate-config">3.3 List your templates configured in Conjurate <strong><a href="#42-templates">config</a></strong></h3>
+<ul>
+  <li><code class="highlighter-rouge">--templates</code></li>
+  <li>alias: <code class="highlighter-rouge">-t</code></li>
+</ul>
+
+<h3 id="34-show-help-message">3.4 Show help message</h3>
+<ul>
+  <li><code class="highlighter-rouge">--help</code></li>
+  <li>alias: <code class="highlighter-rouge">-h</code></li>
+</ul>
+
+<h3 id="35-output-generation-log-messages">3.5 Output generation log messages</h3>
+<ul>
+  <li><code class="highlighter-rouge">--logs</code></li>
+  <li>alias: <code class="highlighter-rouge">-l</code></li>
+  <li>default: <code class="highlighter-rouge">true</code></li>
+  <li><em>disable:</em> <code class="highlighter-rouge">--no-logs</code></li>
+</ul>
+
+<h2 id="40-config">4.0 Config</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"templatesRoot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./conjurate"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"templates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"template-name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./default-destination-dir"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="41-templatesroot">4.1 <code class="highlighter-rouge">templatesRoot</code></h3>
+
+<p>This is the folder where you keep your templates.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── conjurate
+├── src
+└── package.json
+</code></pre></div></div>
+<h4 id="411-using-npm-packages">4.1.1 Using npm packages</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"templatesRoot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~package-name"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="42-templates">4.2 templates</h3>
+
+<p>Templates have a name and a default destination directory.</p>
+
+<p>The name of the folder is the same used in the CLI when you run the generator.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── conjurate
+│   └── template-name
+│       ├── %camel-case%.js
+│       └── %kebab-case%.scss
+├── src
+└── package.json
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conjurate template-name placeholder-content <span class="o">[</span><span class="nt">--out</span> ./replace/destination/placeholder-dir]
+</code></pre></div></div>
+
+<h2 id="50-templates">5.0 Templates</h2>
+
+<p>Each folder inside your <code class="highlighter-rouge">templatesRoot</code> is a template.</p>
+
+<p>You can use a placeholders when developing your templates to help with customization. It will be replaced by the <span>&lt;placeholder-content&gt;</span> passed in the CLI and can be used in files name, files content and folders name. In our example it was <code class="highlighter-rouge">paper-input</code>._</p>
+
+<p>In the example we used <code class="highlighter-rouge">%camel-case%</code> and <code class="highlighter-rouge">%kebab-case%</code> but you have more options:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Placeholders</th>
+      <th>Result of “test string”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">%camel-case%</code></td>
+      <td><code class="highlighter-rouge">testString</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%lower-case%</code></td>
+      <td><code class="highlighter-rouge">test_string</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%no-case%</code></td>
+      <td><code class="highlighter-rouge">test string</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%dot-case%</code></td>
+      <td><code class="highlighter-rouge">test.string</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%dash-case%</code></td>
+      <td><code class="highlighter-rouge">test-case</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%pascal-case%</code></td>
+      <td><code class="highlighter-rouge">TestCase</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%path-case%</code></td>
+      <td><code class="highlighter-rouge">test/case</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%snake-case%</code></td>
+      <td><code class="highlighter-rouge">test_string</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%swap-case%</code></td>
+      <td><code class="highlighter-rouge">TEST CASE</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%title-case%</code></td>
+      <td><code class="highlighter-rouge">Test case</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%upper-case%</code></td>
+      <td><code class="highlighter-rouge">TEST_STRING</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%first-word%</code></td>
+      <td><code class="highlighter-rouge">test</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%last-word%</code></td>
+      <td><code class="highlighter-rouge">case</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="mT-2">
+  ℹ️ If you want to use spaces when using the CLI, use quotes.
+</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conjurate component <span class="s2">"test string"</span>
+</code></pre></div></div>
+
+<h2 id="50-package-templates">5.0 Package templates</h2>
+<p>TODO</p>
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="pY-3 ta-c bdT bdc-gray">
+    2019 - Open an issue <a class="c-green td-u" href="https://github.com/filipelinhares/conjurate-site/issues">here</a> to improve this doc
+</footer>
+
+</body>
+</html>
