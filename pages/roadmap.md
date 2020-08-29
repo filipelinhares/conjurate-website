@@ -1,6 +1,7 @@
 ---
 layout: docs
 title:  "Docs"
+permalink: 'roadmap'
 ---
 
 # Roadmap
@@ -13,3 +14,4 @@ title:  "Docs"
 - [ ] Rewrite NPM templates system
   - [ ] Remove the weird `~module` pattern, i hate that til
   - [ ] Maybe accept repositories from Github 🤔
+- [ ] Add option to ignore test file creation

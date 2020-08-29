@@ -4,29 +4,25 @@
 permalink:           pretty
 
 # Setup
-title:               Jekyll Marlene
-tagline:             Starter template to Jekyll
-url:                 https://github.com/filipelinhares/jekyll-marlene
-baseurl:             ""
+title:               Conjurate
+tagline:             
+url:                 https://conjurate.surge.sh
+baseurl:             "/"
 outdated: false
-video_outdated: true
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
+year: 2020
+
 sass:
   sass_dir:          _sass
   style:            :compressed
 
-# About/contact
 author:
   name:              Filipe Linhares
-  url:               https://twitter.com/ofilipelinhares
+  url:               filipelinhares.com
   email:             filipelinhares@outlook.com
 
-# Custom vars
 version:             1.0.0
 github:
-  repo:             https://github.com/filipelinhares/jekyll-marlene
+  repo:             https://github.com/filipelinhares/conjurate-website
 
 # Gems
 highlighter: rouge

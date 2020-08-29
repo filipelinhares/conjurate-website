@@ -1,0 +1,26 @@
+{
+  "name": "conjurate-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipelinhares/conjurate-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipelinhares/conjurate-website/issues"
+  },
+  "homepage": "https://github.com/filipelinhares/conjurate-website#readme",
+  "dependencies": {
+    "fooltips": "^0.4.0",
+    "funkcss": "^0.9.3",
+    "funkcss-flex-grid": "^0.1.1",
+    "ress": "^2.0.2",
+    "typcss": "^3.2.2"
+  }
+}

@@ -1,0 +1,79 @@
+---
+layout: default
+title: "Templates"
+permalink: 'templates'
+---
+
+<main class="h-100">
+  <div class="container">
+    <div class="d-f jc-sb ai-b">
+      <h1 class="mB-100">Conjurate templates</h1>
+      <a href="/docs/#template-package" class="c-green-light pX-2 pY-1 bd bdc-green bdrs-4 btn-landing">
+        Create your template
+      </a>
+    </div>
+    <section id="container">
+      
+    </section>
+  </div>
+</main>
+
+
+<script type="module">
+  import {html, render} from 'https://unpkg.com/lit-html?module';
+  const container = document.getElementById('container');
+  const i18n = new Intl.DateTimeFormat('en-US');
+
+  render(
+    html`
+    <div class="ta-c">
+      <span class="loader">Loading...</span>
+    </div>`,
+    container
+  );
+
+
+// <button class="tooltip--big" data-tooltip="bottom" aria-label="npm install ${item.name} --save-dev">
+//             <svg width="21" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.421 2.372v1.2H2.716a2 2 0 00-2 2v16a2 2 0 002 2h11a2 2 0 002-2v-1.2h2.705a2 2 0 002-2v-16a2 2 0 00-2-2h-11a2 2 0 00-2 2zm13-.5h-11a.5.5 0 00-.5.5v16a.5.5 0 00.5.5h11a.5.5 0 00.5-.5v-16a.5.5 0 00-.5-.5zm-4.205 19.7v-1.2H7.42a2 2 0 01-2-2v-13.3H2.716a.5.5 0 00-.5.5v16a.5.5 0 00.5.5h11a.5.5 0 00.5-.5z" fill="#323232"/></svg>
+//           </div>
+//         </button>
+
+  const renderItem = (item) => (
+    html`<div class="bd template-item pY-5 pX-2 bdrs-4 md-fxb-8 fxb-11 mX-a mB-3 pos-r">
+      <div class="d-f jc-sb">
+        <h3 class="mT-5">${item.name}</h3>
+        <div class="mT-1 action">
+          <a class="td-u mR-1" href="${item.links.repository}">repo</a>
+          <a class="td-u" href="${item.links.npm}">npm</a>
+        </div>
+      </div>
+      <p class="fz-14 m-0">${item.description}</p>
+      <div class="d-f ai-fe">
+        <p class="fz-12 cur-h" data-tooltip="bottom" data-tooltip-multiline aria-label="${item.keywords.map(item => `#${item} `)}">${item.keywords.slice(0, 4).map(item => html`<span class="mR-1">#${item}</span>`)}</p>
+        <div class="fz-14 mT-1 ta-r mL-a">
+          <div>updated: ${i18n.format(new Date(item.date))}</div>
+          <p>version: ${item.version}</p>
+        </div>
+      </div>
+    </div>`
+  )
+
+  const myTemplate = (results) => {
+    return html`
+    <div class="d-f fxw-w jc-c">
+      <div class="fxb-8">
+        <h4 class="mB-2">Showing ${results.length} result${results.length > 1 ? 's' : ''}:</h4>
+      </div>
+      ${results.map((item) => renderItem(item.package))}
+    </div>`
+  };
+
+  // Render the template to the document
+
+  fetch('https://api.npms.io/v2/search?q=keywords:conjurate-template', { mode: 'cors' })
+    .then(x => x.json())
+    .then(l => {
+      console.log('lorem ipsum dolor')
+      render(myTemplate(l.results), container);
+    })
+</script>

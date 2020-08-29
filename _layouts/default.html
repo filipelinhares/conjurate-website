@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,233 +6,26 @@
   <meta name="description" content="Easy scaffolding tool">
 
   {% if page.title %}
-    <title>Conjurate - {{ page.title }}</title>
+    <title>{{ site.title }} - {{ page.title }}</title>
   {% else %}
-    <title>Conjurate</title>
+    <title>{{ site.title }}</title>
   {% endif %}
 
   <link rel="shortcut icon" href="/favicon.png">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
   <link rel="stylesheet" href="https://unpkg.com/funkcss/dist/funkcss.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/funkcss-flex-grid/dist/funkcss-flex-grid.min.css">
   <link rel="stylesheet" href="https://unpkg.com/typcss/dist/typ.min.css">
   <link rel="stylesheet" href="https://unpkg.com/fooltips/dist/fooltips.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="/styles.css">
-
-
-  <style>
-    .highlight .err {
-      background: transparent;
-    }
-
-    :target {
-      position: relative;
-    }
-
-    :target:before {
-      content: '🔗';
-      position: absolute;
-      display: block;
-      left: -30px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-radius: 100%;
-    }
-
-    [type="checkbox"] {
-      margin-right: 5px;
-    }
-
-    .task-list-item {
-      list-style: none;
-    }
-
-    table {
-      width: 100%;
-    }
-
-    table {
-      border: 1px solid #c6cbd1;
-      border-radius: 4px;
-      border-collapse: collapse;
-      text-align: center;
-    }
-
-    th {
-      padding: .5em;
-      background: #f2f2f2;
-      border: 1px solid #c6cbd1;
-    }
-
-    td {
-      border: 1px solid #c6cbd1;
-      padding: 6px;
-    }
-
-    tr {
-      border-top: 1px solid #c6cbd1;
-    }
-
-    body {
-      font-family: 'Lato', sans-serif;
-      font-size: 18px;
-      color: #313131;
-    }
-
-    span {
-      font-family: 'Roboto Mono', monospace;
-      margin-bottom: .5em;
-      line-height: 1.8;
-    }
-
-    code {
-      font-family: 'Roboto Mono';
-    }
-
-    header {
-      position: relative;
-      z-index: 2000;
-      background: #FFF;
-      font-size: 20px;
-      /*background-color: #81D37F;*/
-      border-bottom: 2px solid #f3f3f3 !important;
-    }
-
-    strong {
-      font-weight: 700;
-      border-bottom: 1px dotted;
-    }
-
-    h2 {
-      margin-top: 60px;
-    }
-
-    .bdc-green {
-      border-color: #81D37F;
-    }
-
-    .home a {
-      text-decoration: none;
-      color: #fff;
-      background-color: #81D37F;
-    }
-
-    .home a:hover {
-      color: #81D37F;
-      background: #FFF;
-      text-decoration: none;
-    }
-
-    ul a {
-      display: block;
-      border-top: 0px solid red;
-      color: #323232;
-      font-size: 20px;
-    }
-
-    a {
-     color: #313131;
-     text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    nav {
-      display: grid;
-      grid-auto-flow: column;
-      gap: .5rem;
-      align-items: center;
-    }
-
-    li a {
-      padding-top: .5em;
-      padding-bottom: .5em;
-      border-bottom: 1px solid #f2f2f2;
-      color: #313131;
-      text-align: left;
-      padding-left: 1em;
-    }
-
-    li a:hover {
-      text-decoration: none;
-    }
-
-    .tooltip--red {
-      --tooltip-background-color: red;
-    }
-
-    .tooltip--big {
-      --tooltip-background-color: #222;
-      --tooltip-padding: 8px 12px;
-      --tooltip-font-size: 1rem;
-    }
-
-    .cur-h {
-      cursor: help;
-    }
-
-    .c-white {
-      color: #FFF;
-    }
-
-    .c-green {
-      color: #689064;
-    }
-
-    .c-green-light {
-      color: #81D37F;
-    }
-
-    .c-red {
-      color: #b96a57;
-    }
-
-    .c-gray {
-      color: #f3f3f3;
-    }
-
-    .bgc-yellow {
-      background-color: #e29c45;
-    }
-
-    .bdc-gray {
-      border-color: #f3f3f3;
-    }
-
-    .fz-2 {
-      font-size: 2rem;
-    }
-
-    .btn-landing:focus,
-    .btn-landing:hover {
-      color: #fff;
-      text-decoration: none;
-      background-color: #81D37F;
-    }
-
-    pre {
-      background: #f3f3f3;
-      padding: 1em;
-      border-radius: 4px;
-    }
-
-    @media screen and (max-width: 1000px) {
-      .hide-xs {
-        display: none;
-      }
-
-      .w-90-sm {
-        width: 90%;
-      }
-    }
-  </style>
 </head>
 <body>
   {% include _header.html %}
-  <main class="">
+  <main>
     {{ content }}
   </main>
   {% include _footer.html %}
