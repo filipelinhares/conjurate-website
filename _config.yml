@@ -1,9 +1,5 @@
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
 
-# Setup
 title:               Conjurate
 tagline:             
 url:                 https://conjurate.surge.sh
@@ -24,5 +20,4 @@ version:             1.0.0
 github:
   repo:             https://github.com/filipelinhares/conjurate-website
 
-# Gems
 highlighter: rouge

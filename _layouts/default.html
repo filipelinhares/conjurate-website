@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Easy scaffolding tool">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Easy scaffolding tool">
 
-  {% if page.title %}
+    {% if page.title %}
     <title>{{ site.title }} - {{ page.title }}</title>
-  {% else %}
+    {% else %}
     <title>{{ site.title }}</title>
-  {% endif %}
+    {% endif %}
 
-  <link rel="shortcut icon" href="/favicon.png">
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/funkcss/dist/funkcss.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/funkcss-flex-grid/dist/funkcss-flex-grid.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/typcss/dist/typ.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/fooltips/dist/fooltips.min.css">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/funkcss/dist/funkcss.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/funkcss-flex-grid/dist/funkcss-flex-grid.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/typcss/dist/typ.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/fooltips/dist/fooltips.min.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="/styles.css">
-</head>
-<body>
-  {% include _header.html %}
-  <main>
-    {{ content }}
-  </main>
-  {% include _footer.html %}
-</body>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+  </head>
+
+  <body>
+    {% include _header.html %}
+    <main>
+      {{ content }}
+    </main>
+    {% include _footer.html %}
+  </body>
 </html>
