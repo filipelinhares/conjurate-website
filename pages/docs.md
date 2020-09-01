@@ -93,6 +93,10 @@ It will be replaced by the [`%placeholders%`](/docs/#placeholders) when running 
 - `--output`
 - alias `-o`
 
+#### Generate the structure without a container folder
+- `--flat`
+- alias `-fl`
+
 #### List your templates.
 - `--templates`
 - alias: `-t`
